@@ -2,11 +2,18 @@ package com.example.demo.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class EmployeeVO {
 	
    private long empId;
+   @NotNull(message = "Name should not be empty")
    private String empName;
    private String designation;
+   @DateTimeFormat
    private Date swipeInTime;
    private Date swipeOutTime;
    private String location;
